@@ -5,5 +5,6 @@
 for nuc in A C G T
 do
   echo "Considering " $nuc
-  awk '/^#/{next} {if ($4 == $nuc) {print $5}}' $1 | sort | uniq -c
+  awk -v var=$nuc '/^#/{next} {if ($4 == var) {print $5}}' $1 | sort | uniq -c
 done
+
