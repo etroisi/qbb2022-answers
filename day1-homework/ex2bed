@@ -1,0 +1,7 @@
+genefile=~/data/vcf_files/random_snippet.vcf
+ 
+bedfile=~/data/bed_files/chromHMM.E116_15_coreMarks_hg38lift_stateno.chr21.bed
+
+awk '{if ($4 == "1") {print}}' ~/data/bed_files/chromHMM.E116_15_coreMarks_hg38lift_stateno.chr21.bed > state1
+bedtools intersect -a $genefile -b state1 > intersect
+awk '{if ($4 == "C") {print $5}}' intersect | sort | uniq -c
