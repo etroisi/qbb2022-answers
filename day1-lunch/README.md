@@ -95,6 +95,7 @@ grep AF=1 HG00100.vcf | cut -f 1 | uniq -c
 5, which are EAS_AF=1, EUR_AF=1, AFR_AF=1, AMR_AF=1, SAS_AF=1
 
 5f. not sure if this means you want the AFR value for each row (ie chr21 at 41814849 is AFR_AF=1), or just want to know all the possible AFR values (ie, AFR_AF=1 or AFR_AF=0.99, etc) contained in this file
+<<<<<<< HEAD
 
 
 
@@ -102,6 +103,8 @@ grep AF=1 HG00100.vcf | cut -f 1 | uniq -c
 
 
 
+=======
+>>>>>>> 2255ce1 (answers for day 1 lunch exercises)
 
 
 
