@@ -71,6 +71,38 @@ bedtools closest -a variants.bed -b genes.sorted.bed
 #after doing that, error reads: Error: Sorted input specified, but the file variants.bed has the following out of order record
 
 need to sort variants.bed too, same as we did for genes.bed
+<<<<<<< HEAD
+=======
+
+awk '/^#/{next} {print $1"\t"$2-1 "\t"$2}' $1 > variants.bed
+sort -k1,1 -k2,2n ~/data/bed_files/genes.bed > genes.sorted.bed
+sort -k1,1 -k2,2n variants.bed > variants.sorted.bed
+bedtools closest -a variants.sorted.bed -b genes.sorted.bed
+
+output looks like: chr21	5218156	5218157	chr21	10521552	10606140	TPTE
+etc
+
+variants returned? first save this as a new file 
+awk '/^#/{next} {print $1"\t"$2-1 "\t"$2}' $1 > variants.bed
+sort -k1,1 -k2,2n ~/data/bed_files/genes.bed > genes.sorted.bed
+sort -k1,1 -k2,2n variants.bed > variants.sorted.bed
+bedtools closest -a variants.sorted.bed -b genes.sorted.bed > variantsgenes.bed #created a new file to make the next step easier
+#word count for the newly created file that connects 
+wc ~/qbb2022-answers/day1-homework/variantsgenes.bed
+10293   72051  562138 /Users/cmdb/qbb2022-answers/day1-homework/variantsgenes.bed
+
+variants returned is 10293
+
+unique genes returned? keep using the variantsgenes.bed file
+cut -f 7 variantsgenes.bed | uniq -c > variantsgenes2.bed
+#pull out just gene, which is field 7, collapse into unique names, save this as a file so i can use wc to count the lines
+wc variantsgenes2.bed
+ 731    1462   10235 variantsgenes2.bed
+ 
+ genes returned: 731
+ 
+ 10293 variants across 731 genes = 10293/731 = 14.08
+>>>>>>> 2f7e652 (updated answers and secript for homework day 1)
 
 awk '/^#/{next} {print $1"\t"$2-1 "\t"$2}' $1 > variants.bed
 sort -k1,1 -k2,2n ~/data/bed_files/genes.bed > genes.sorted.bed
