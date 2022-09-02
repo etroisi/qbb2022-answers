@@ -11,4 +11,8 @@ pca_list=np.genfromtxt("plink.eigenvec",
 
 fig, ax = plt.subplots()
 ax.scatter(pca_list['pca1'], pca_list['pca2'])
+
+ax.legend()
+ax.set_xlabel("pca1")
+ax.set_ylabel("pca2")
 plt.show()
