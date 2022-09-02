@@ -11,6 +11,9 @@ portion that
 	creates file subset_regions.sh
 	
 	to confirm if the graphs match: open the files and compare
+	-cmp -b file1 file2
+	b will print where the files differ
+	note: files differ on the version of matplotlib 
 	
 	transcribed unprocessed pseudogene vs transcript processed pseudogene vs processed pseudogene? snRNA
 	
