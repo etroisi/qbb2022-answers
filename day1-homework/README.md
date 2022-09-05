@@ -124,14 +124,17 @@ wc ~/qbb2022-answers/day1-homework/variantsgenes.bed
 variants returned is 10293
 
 unique genes returned? keep using the variantsgenes.bed file
-cut -f 7 variantsgenes.bed | uniq -c > variantsgenes2.bed
-#pull out just gene, which is field 7, collapse into unique names, save this as a file so i can use wc to count the lines
+cut -f 7 variantsgenes.bed | sort -k 7 | uniq -c 6 -c | wc -1 > variantsgenes2.bed
+#pull out just gene, which is field 7, *sort so that gene names are in order*, collapse into unique names, save this as a file so i can use wc to count the lines
 wc variantsgenes2.bed
  731    1462   10235 variantsgenes2.bed
  
  genes returned: 731
  
- 10293 variants across 731 genes = 10293/731 = 14.08
+ After using sort, genes returned is 200.
+ 
+ 
+ 10293 variants across 200 genes = 10293/200 = 51.5
 
  
 
