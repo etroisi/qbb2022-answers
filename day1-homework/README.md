@@ -2,8 +2,7 @@
 
 #Exercise 1: 
 #Error message: awk: illegal field $(), name "nuc" 
-#Error message means that awk does not accept nuc, because nuc is a bash command. so you have to basically make nuc into something awk can understand. you do this by adding -v to then make nuc a variable, that awk can then consider in the rest of the awk statement
-
+#Error message means that we need to define the variable for awk in bash. $ for awek means field or column number. so we have to define the variable for awk.
 for nuc in A C G T
 do
   echo "Considering " $nuc
