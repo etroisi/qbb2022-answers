@@ -27,6 +27,10 @@ yes, statistically signficant relationship between father age and father mutatio
 
 78.50500000000001 mutations if the father was 50.5
 
+6. Ttest_indResult(statistic=53.40356528726923, pvalue=2.198603179308129e-264)
+code to get here: print(stats.ttest_ind(df["fathermutation"], df["mothermutation"]))
+Yes, the number of maternally inhereted de novo mutations per proband is significantly different than the paternally inherited de novo mutations per proband.
+
 
 
 
