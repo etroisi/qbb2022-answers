@@ -11,7 +11,7 @@ cut -d ',' -f 1 dnmfather > dnmfathercut
 sort -n dnmfathercut | uniq -c > dnmfathercutsorted
 awk -v OFS='\t' '{print $1, $2}' dnmfathercutsorted > dnmfathercutsortedtab
 
-join -1 2 -2 2 -t $'\t' dnmfathercutsorted2tab dnmmothercutsorted2tab > parentsprobandssortedjoined
+join -1 2 -2 2 -t $'\t' dnmfathercutsortedtab dnmmothercutsortedtab > parentsprobandssortedjoined
 
 
 sed 's/,/\t/g' aau1043_parental_age.csv > sedparentage 
