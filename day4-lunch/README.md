@@ -1,14 +1,17 @@
 Exercise 1:
-*** Subsetting .vcf for each feature
---- Subsetting exons.chr21.bed.vcf
+
+Portion of do_all.sh output that reports how many bp each feature covers:
+Subsetting .vcf for each feature
+Subsetting exons.chr21.bed.vcf
     + Covering 1107407 bp
---- Subsetting processed_pseudogene.chr21.bed.vcf
+Subsetting processed_pseudogene.chr21.bed.vcf
     + Covering 956640 bp
---- Subsetting protein_coding.chr21.bed.vcf
+Subsetting protein_coding.chr21.bed.vcf
     + Covering 13780687 bp
 
 	creates file subset_regions.sh
 	
+One or more strategies to confirm that reproduced plots are the same as in the cache/ directory:	
 	to confirm if the graphs match: open the files and compare
 	-cmp -b file1 file2
 	b will print where the files differ
@@ -16,9 +19,10 @@ Exercise 1:
 	-diff
 	-md5sum used for sequencing data, will show you a long sequence of numbers and letters, if it's the same for both your files then they're the same 
 	
-	snRNA, pseudogene, lncRNA, MT_tRNA
+Three other gene_types present in the GENCODE .gtf that you find interesting and why:
+snRNA, pseudogene, lncRNA, MT_tRNA...interesting to have SNPs in genetic regions that aren't coding genes.
 	
-	
+Describe possible trends among plots:
 	most SNPs are low frequency. fewer individuals have a high number of SNPs, because SNPs are rare. a few have higher frequency, indicating that multiple individuals have SNPs in that specific genetic location.
 	
 	
