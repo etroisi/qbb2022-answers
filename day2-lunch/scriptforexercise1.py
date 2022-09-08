@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-
+#!/usr/bin/env python
 import sys
 
 def parse_bed(fname): #defining the function
@@ -14,7 +13,7 @@ def parse_bed(fname): #defining the function
             continue
         fields = line.rstrip().split()#remove white space after the line; white spaces will delineate separate units in a field
         fieldN = len(fields)#just saying fieldN refers to the length of fields (fields is a list of the items in a field)
-        if fieldN not in [3,4,5,6,7,8,9,12]: #we only want lines that have 3,4,5,6,7,8,9,12 fields. therefore, this line means does not do the following line for 3-12
+        if fieldN not in [3,4,5,6,7,8,9,12]: #we only want lines that have 3,4,5,6,7,8,9,12 fields. therefore, this line means does not do the following line for 3-12 and 10,11
             print(f"Line {i} appears malformed", file=sys.stderr)#if fieldN is 1,2,10,11, or greater than 12, that's an error
             continue#keep going, don't stop the code if the line is an error
         if fieldN == 12:#if the line has a field length is 12, do the following. this part checks if the line is field length 12, does column 9 = column 10 or column 9 = 11, if either of these are not true, that's a fail
@@ -50,6 +49,9 @@ def parse_bed(fname): #defining the function
             print(f"Line {i} appears malformed", file=sys.stderr)#print "line is malformed" if not 8,  10, or 11.
     fs.close()#close the file
     return bed
+    
+
+
 
 if __name__ == "__main__":
     fname = sys.argv[1]

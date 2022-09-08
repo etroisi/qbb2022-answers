@@ -101,7 +101,7 @@ power_mat=numpy.zeros((len(probs), len(tosses)), dtype = float)
 
 for i,p in enumerate(probs): #i is column, j is row. n is n_tosses, p is prob_heads
      for j,n in enumerate(tosses):
-        power=run_experiment(p, n, correct_the_pvalues=True)
+        power=run_experiment(p, n)
         power_mat[i,j] = power
 
 
@@ -117,7 +117,7 @@ plt.title('power corrected pvalues')
 plt.xlabel('number of tosses')
 plt.ylabel('prob of heads')
 plt.show()
-plt.savefig('powermapcorrectedpvalues')
+plt.savefig('powermapuncorrectedpvalues')
 # ax.set_xlabel("tosses")
 # ax.set_ylabel("probability of heads")
 # ax.set_title("Heatmap to Visualize Power")

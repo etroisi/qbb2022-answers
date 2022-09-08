@@ -21,34 +21,34 @@ df = np.genfromtxt("probandsandparentage", delimiter=' ', dtype=None, encoding=N
 #plt.show()
 
 
-fig, ax = plt.subplots()
-ax.scatter(df["fatherage"], df["fathermutation"])
-ax.set_ylabel("fathermutation")
-ax.set_xlabel("father age")
-ax.set_title("father age vs father mutation")
+#fig, ax = plt.subplots()
+#ax.scatter(df["fatherage"], df["fathermutation"])
+#ax.set_ylabel("fathermutation")
+#ax.set_xlabel("father age")
+#ax.set_title("father age vs father mutation")
 #ax.legend()
-#plt.savefig('ex2_b.png')
+##plt.savefig('ex2_b.png')
 #plt.show()
 
 full_model = smf.ols(formula = "fathermutation ~ 1 + fatherage", data = df).fit()
 
-print(full_model.summary())
-print(full_model.pvalues)
+#print(full_model.summary())
+#print(full_model.pvalues)
 
-#fig, ax = plt.subplots()
-#ax.hist(df["mothermutation"], alpha = 0.5, label = "mother mutation")
-#ax.hist(df["fathermutation"], alpha = 0.5, label = "father mutation")
-#ax.set_ylabel("frequency")
-#ax.set_xlabel("number of mutations")
-#ax.legend()
-#plt.show()
-#plt.savefig('histogramofmutationsandparentage.png')
+fig, ax = plt.subplots()
+ax.hist(df["mothermutation"], alpha = 0.5, label = "mother mutation")
+ax.hist(df["fathermutation"], alpha = 0.5, label = "father mutation")
+ax.set_ylabel("frequency")
+ax.set_xlabel("number of mutations")
+ax.legend()
+plt.show()
+plt.savefig('histogramofmutationsandparentage.png')
 
-new_data = df[0]
-new_data.fill(0)
-new_data['fatherage'] = 50.5
-print(full_model.predict(new_data))
+#new_data = df[0]
+#new_data.fill(0)
+#new_data['fatherage'] = 50.5
+#print(full_model.predict(new_data))
 
-print(1.35*50.5 +10.33)
+#print(1.35*50.5 +10.33)
 
 
