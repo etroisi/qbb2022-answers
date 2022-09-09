@@ -1,0 +1,3 @@
+# Feedback day2-homework
+
+This all looks really good. Your labelling script suggests that you are getting comfortable using dictionaries in your own scripts. I was also happy to see that you used both the chromosome and position for the key. The only real feedback I've got is that while it doesn't matter in this assignment, when you got the id_of_interest, you didn't record it in your kgp entry. This would be important for downstream analyses. Otherwise, great job. Keep it up!
