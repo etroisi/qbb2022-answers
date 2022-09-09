@@ -78,7 +78,12 @@ def run_experiment(prob_heads, n_toss, n_iters = 100, seed = 389, correct_the_pv
     #prob_heads = [0.55, 0.75, 1.0]        
     numpy.random.seed(seed)
     pvals = []
-    for k in range(n_iters):
+    #i could put the other for loop here:
+    #for i,p in enumerate(probs): #i is column, j is row. n is n_tosses, p is prob_heads
+         #for j,n in enumerate(tosses): 
+            #power=run_experiment(p, n)
+            #power_mat[i,j] = power
+    for k in range(n_iters):#if the above forloop was here we would need to indent the following lines
         results_arr = simulate_coin_toss(n_toss, prob_heads = prob_heads)
         n_success = numpy.sum(results_arr)
         pvals.append(perform_hypothesis_test(n_success, n_toss))
@@ -98,9 +103,11 @@ power_mat=numpy.zeros((len(probs), len(tosses)), dtype = float)
 #      for j,n in enumerate(tosses):
 #         power=run_experiment(n,p)
 #         power_mat[i,j] = power
+#seed = 1243
+#numpy.random.seed(seed) <--if i put this here, the seed would only be set once. I have it now as setting every time i run experiment, because it is in the run experiment function.
 
 for i,p in enumerate(probs): #i is column, j is row. n is n_tosses, p is prob_heads
-     for j,n in enumerate(tosses):
+     for j,n in enumerate(tosses): # you could put this within the run experiment function. it would go on top of the for loop that's already there, with the other for loop being nested underneath it
         power=run_experiment(p, n)
         power_mat[i,j] = power
 
@@ -113,7 +120,7 @@ for i,p in enumerate(probs): #i is column, j is row. n is n_tosses, p is prob_he
 fig, ax = plt.subplots()
 sns.heatmap(power_mat, vmin=0, vmax=1, xticklabels=tosses, yticklabels=probs, ax=None, cmap='mako')
 sns.color_palette("mako") #, as_cmap=True)
-plt.title('power corrected pvalues')
+plt.title('power uncorrected pvalues')#if using corrected pvalues, 'power corrected pvalues'
 plt.xlabel('number of tosses')
 plt.ylabel('prob of heads')
 plt.show()
