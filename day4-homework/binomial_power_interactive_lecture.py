@@ -64,7 +64,7 @@ def compute_power(n_rejected_correctly, n_tests):
     power = n_rejected_correctly / n_tests
     return(power)
 
-def run_experiment(prob_heads, n_toss, n_iters = 100, seed = 389, correct_the_pvalues = False):
+def run_experiment(prob_heads, n_toss, n_iters = 100, seed = 389, correct_the_pvalues = False):#if doing corrected pvalues, correct_the_pvalues = True
     '''
     Input: prob_heads, a float, the probability of a simulated coin toss returning heads
            n_toss, an integer, the number of coin tosses to simulate
@@ -111,13 +111,13 @@ for i,p in enumerate(probs): #i is column, j is row. n is n_tosses, p is prob_he
 # power2b = run_experiment(0.95, 10)
 #
 fig, ax = plt.subplots()
-sns.heatmap(power_mat, vmin=0, vmax=1, xticklabels='auto', yticklabels='auto', ax=None, cmap='mako')
+sns.heatmap(power_mat, vmin=0, vmax=1, xticklabels=tosses, yticklabels=probs, ax=None, cmap='mako')
 sns.color_palette("mako") #, as_cmap=True)
 plt.title('power corrected pvalues')
 plt.xlabel('number of tosses')
 plt.ylabel('prob of heads')
 plt.show()
-plt.savefig('powermapuncorrectedpvalues')
+plt.savefig('powermapuncorrectedpvalues')#if using corrected values, 'powermapcorrectedpvalues'
 # ax.set_xlabel("tosses")
 # ax.set_ylabel("probability of heads")
 # ax.set_title("Heatmap to Visualize Power")
