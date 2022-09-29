@@ -1,0 +1,15 @@
+bwa index sacCer3.fa #index the reference genome
+bwa mem -R "@RG\tID:AO1_09\tSM:A01_09"-t4 -oA01_09aligned.sam sacCer3.fa A01_09.fastq #align to reference, do this for all A01 files 
+samtools sort -o A01_09alignedsorted.bam -O BAM A01_09aligned.sam #sort the aligned files, make them bam files, save them as a separate file, do this for all A01 aligned files 
+samtools index A01_63alignedsorted.bam #index these aligned and sorted file, output is bam.bai
+freebayes --genotype-qualities -p1 -f sacCer3.fa A01_09alignedsorted.bam A01_11alignedsorted.bam A01_23alignedsorted.bam A01_24alignedsorted.bam A01_27alignedsorted.bam A01_31alignedsorted.bam A01_35alignedsorted.bam A01_39alignedsorted.bam A01_62alignedsorted.bam A01_63alignedsorted.bam > allthecalls.vcf #variant call on all 10 files for haploid (p1)
+vcffilter -f "QUAL > 20" allthecalls.vcf > signficantsnps.vcf #filter the high quality snps
+
+vcfallelicprimitives -g -k signficantsnps.vcf > decomposedsnps.vcf
+conda install snpeff=5.0 -y
+
+snpeff download R64-1-1.99
+
+snpeff ann R64-1-1.99 decomposedsnps.vcf > annotateddecomposedsnps.vcf
+
+#need to get information about quality from the info line and the format line: format will give y
