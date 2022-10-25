@@ -11,8 +11,18 @@ I need 10Mbp x 24x = 240Mbp of data
 
 
 
-#Question 1.2. Write a program (in Python) to simulate sequencing 5x coverage of a 1Mbp genome with 100bp reads
-#see other file
+Question 1.2. Write a program (in Python) to simulate sequencing 5x coverage of a 1Mbp genome with 100bp reads
+see other file
+
+Question 1.3
+see python file
+
+Question 1.4
+a random value for the simulation, usually between 3 and 17, and for the poisson, 0.3059023205018258, consistently.
+At low coverage, lots of 0 values (ie, no reads per locus): 6628 (for simulation)
+6737.946999085467 (for poisson)
+Low coverage = more zeros
+High coverage = less zeros
 
 Question 2.1
 4
@@ -26,7 +36,7 @@ total length = 234,467
 
 
 Question 2.3
-#/Users/cmdb/SPAdes-3.15.5-Darwin/bin/spades.py  -1 frag180.1.fq -2 frag180.2.fq --mp-1 1 jump2k.1.fq --mp-2 1 jump2k.2.fq -o .
+/Users/cmdb/SPAdes-3.15.5-Darwin/bin/spades.py  -1 frag180.1.fq -2 frag180.2.fq --mp-1 1 jump2k.1.fq --mp-2 1 jump2k.2.fq -o .
 #grep -c '>' contigs.fasta
 4
 
