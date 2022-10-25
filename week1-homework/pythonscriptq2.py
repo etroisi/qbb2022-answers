@@ -23,6 +23,9 @@ for i in range(50000):
   startsite = numpy.random.randint(0,990000)
   genome[startsite:startsite + 100] += 1
     
+for i in range(15000):
+  startsite = numpy.random.randint(0,990000)
+  genome[startsite:startsite + 100] += 1
 
 #for i in genome:
  #   print(i) <-- you can see it missed a lot
