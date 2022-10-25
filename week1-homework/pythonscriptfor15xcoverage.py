@@ -23,7 +23,7 @@ genome = numpy.zeros(1000000)#made an array with one row of 1M zeros, which is a
 #startsite = numpy.random.randint(0,990000)
 #genome[startsite:startsite + 100] += 1
 
-for i in range(50000):
+for i in range(150000):
   startsite = numpy.random.randint(0,1000000 - 100)
   genome[startsite:startsite + 100] += 1
   
