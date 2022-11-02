@@ -56,9 +56,39 @@ NODE_4_length_39426_cov_13.189810	39426	198434	60	61
 #the average identity is 100 dnadiff ref.fa contigs.fasta, cat out.report
 #What is the length of the longest alignment [Hint: try nucmer and show-coords]? nucmer ref.fa contigs.fasta
 
-#show-coords out.delta
 
-#all just showing coords and dnadiffing
+show-coords out.delta
+3.2 longest alignment is 105830
+
+3.3 insertions and deletions:
+looking through out.report
+5 deletions in the query, 1 insertion in the query 
+
+4.1 node 3, starting at position 26789
+4.2 length is 711 (27498-26787)
+
+4.3 GCTAGCACCCGATATGCCTGGCTGCCGCGTGAAAAGCGCGCGTATTGAGTCACAGGAAGC
+CCGTGACTAGGCGCCTCAGCAACTTTTACATTGCGCGGAATAGTCGTTTTTAACAACGCA
+TCACCGAAAAATTCCCGCAGCTGTTTGTCAACTTCCCGAGTTAAGCTGGTGCGCTTATCG
+TACATGGTGCGCAAAATGCCAGAAATCGCCAGCTCAGGGTTAACACTCTGTTTGATCTGC
+TCCACTGTATCAAGCAGTGCTGACAACCCTTCCAGCGCGTAAAACTCGCATTGAAGCGGG
+ATGAGTACGCCATCCGCTGCTGTCAGTGCGTTAACGGTAAGCATATTAAGCGACGGCGGA
+CAGTCGATGAGCACCACATCGTAGTCATCGGCCACCGCGTTAAGCGCTAGCGATAAACGG
+CTTTGGCGCTGGTCGATGTCCAGTAGCTCTACTTCGGCCGCGGTCAAATCGCCGTTGCCG
+GGCAACACATCAAACTTTACCGGCAGGTTACGCACGATAACTTCGTTCGCAGTTGCCTCC
+CCCAGCAGTACATCGAGAACGCTTTTATCCAGCTCATATTTGTCGATGCCGCTGCCCATA
+CTGGCATGCCCTTGTGGGTCTAAATCAACCAGCAGTACACGGCGATCCAGCGCTGCCAAG
+CTGGCCGCTAGATTTACGGCTGAGGTGGATTTGCCCACGCCGCCTTTTTGGT
+
+samtools faidx -i contigs.fasta NODE_3_length_41351_cov_13.316108
+samtools faidx -i contigs.fasta NODE_3_length_41351_cov_13.316108:13854-13855
+
+4.4
+./dna-decode.py --input dna.txt -d
+The decoded message :  ¨+;.nÃ#:Ë~ðÅËëXú
+                                           Eø/ÖDì+9vÈçqÉe65 -
+                                                                T7×®5M
+yÀAÆyn@¨½¾²Âsè0ÔV*æßx
 
 
 
