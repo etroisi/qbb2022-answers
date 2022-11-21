@@ -44,7 +44,15 @@ ax.scatter(x,y, c ="#2ca02c")
 ax.set_ylabel("distribution")
 ax.set_xlabel("number of reads")
 ax.legend()
-plt.show()
+#plt.show()
+
+
+count=0
+for i in genome:
+    if i == 0:
+        count +=1
+print(count)
+print(y[0])
 
     
 # for i in range(15000):
