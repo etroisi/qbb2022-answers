@@ -8,6 +8,9 @@ f=open("cb1908.assoc.linear")
 chromlist=[]
 pvaluelist=[]
 sigpvalues=[]
+pvalxcoord=[]
+pvalsigxcoord=[]
+ADDrowCount = 0
 for index, line in enumerate(f):
     if index == 0:#skip the header
         continue
@@ -16,8 +19,10 @@ for index, line in enumerate(f):
     if fields[4] ==  "ADD": #want only the test = ADD lines
         chromlist.append(fields[0])#add items from first field into this list
         pvaluelist.append(fields[8])#add items from 8th field into this list, so you have chromosome number and the pvalue of the snp that's found there
-    if fields[8] <= 10e-5:
-        sigpvalues.append(fields[8])#grab the p values that are significant and put them in a separate list
+        if fields[8] <= 10e-5:
+            sigpvalues.append(fields[8])#grab the p values that are significant and put them in a separate list
+            pvalsigxcoord.append(ADDrowCount)
+        ADDrowCount += 1
     
 
 neglogpval=np.array(pvaluelist)#do log of the p values by making an array of the p values
@@ -32,8 +37,10 @@ neglogsigpval= -1*neglogsigpval
 
 
 fig, ax = plt.subplots()
-ax.scatter(range(len(neglogpval)), neglogpval)
-ax.scatter(range(len(neglogsigpval)), neglogsigpval, c="yellow")
+ax.scatter(range(len(neglogpval)), neglogpval, c="darkviolet")
+ax.scatter(pvalsigxcoord, neglogsigpval, c="deeppink")
 ax.set_xlabel("SNP")
 ax.set_ylabel("-log(pvalue)")
 plt.show()
+
+print(pvalsigxcoord)
