@@ -31,7 +31,7 @@ ax.set_xlabel("generations")
 
 fig, ax=plt.subplots()
 ax.scatter(popsizes,listoftimestofixation2)
-ax.set_ylabel("time to fixation")#how often fixation occurs at x number of generations
+ax.set_ylabel("time to fixation")
 ax.set_xlabel("popsize")
 plt.show()
 
