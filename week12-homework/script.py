@@ -60,4 +60,4 @@ ax.set_xlabel("allele frequency")
 ax.set_ylabel("time to fixation")
 ax.set_xticks(partaf5)
 
-plt.show()
+#plt.show()
