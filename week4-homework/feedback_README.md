@@ -8,3 +8,9 @@ Great start! Your plink commands all look correct, and the code for your PCA plo
 Great work so far.
 
 (3.5/10)
+
+
+REGRADE 12/16/2022 -- Dylan
+
+Really great work on this. You've done all of this excellently. My one minor comment is that in the manhattan plot, typically we want to make it clearer where SNPs are relative to each other in the genome (like actual bp position), but this totally meets the requirements.
+(10/10)
