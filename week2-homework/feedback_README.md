@@ -7,3 +7,13 @@ For completion, you need to read in the fasta, scoring matrix, gap score, and ou
 Everything else looks great!
 
 7/10
+
+REGRADE 12/20/22 -- Dylan
+
+This was really well done Emma! That said, there are a couple of very minor issues:
+1. When you're doing traceback you should be using `elif` statements instead of `if` statements. As it stands right now, if there's a tie between any of these, you'll actually step backwards through the traceback matrix twice, and update the alignment twice. (no points deducted)
+2. Secondly, your while condition is `i!=0 and j!=0`, but that will actually terminate as soon as either i or j become 0, which is not what we want if there are leading gaps. Because of this (along with the previous error), your count for the number of gaps in the DNA alignment is slightly off (-0.25)
+
+Overall though, great work! This looks awesome.
+
+(9.75/10)
