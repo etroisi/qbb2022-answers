@@ -13,3 +13,5 @@ snpeff download R64-1-1.99
 snpeff ann R64-1-1.99 decomposedsnps.vcf > annotateddecomposedsnps.vcf
 
 #need to get information about quality from the info line and the format line: format will give y
+
+head -n 1000 annotateddecomposedsnps.vcf > first1klines.vcf #get first 1k lines of vcf
