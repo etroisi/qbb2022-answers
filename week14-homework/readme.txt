@@ -66,25 +66,24 @@ grep NODE bin.4.fa > nodesbin4.txt
 grep NODE bin.5.fa > nodesbin5.txt
 grep NODE bin.6.fa > nodesbin6.txt
 
-while read p; do grep p /Users/cmdb/qbb2022-answers/week14-homework/metagenomics_data/step0_givendata/KRAKEN/assembly.kraken; done <nodesbin1.txt
+while read p; do grep ${p:1} /Users/cmdb/qbb2022-answers/week14-homework/metagenomics_data/step0_givendata/KRAKEN/assembly.kraken; done <nodesbin1.txt | cut -f2 | sort | uniq -c | sort -n > bin1species.txt
 
-while read p; do grep p /Users/cmdb/qbb2022-answers/week14-homework/metagenomics_data/step0_givendata/KRAKEN/assembly.kraken; done <nodesbin2.txt | cut -f2 | sort | uniq -c | sort -n > bin2species.txt
+while read p; do grep ${p:1} /Users/cmdb/qbb2022-answers/week14-homework/metagenomics_data/step0_givendata/KRAKEN/assembly.kraken; done <nodesbin2.txt | cut -f2 | sort | uniq -c | sort -n > bin2species.txt
 
-while read p; do grep p /Users/cmdb/qbb2022-answers/week14-homework/metagenomics_data/step0_givendata/KRAKEN/assembly.kraken; done <nodesbin3.txt | cut -f2 | sort | uniq -c | sort -n > bin3species.txt
+while read p; do grep ${p:1} /Users/cmdb/qbb2022-answers/week14-homework/metagenomics_data/step0_givendata/KRAKEN/assembly.kraken; done <nodesbin3.txt | cut -f2 | sort | uniq -c | sort -n > bin3species.txt
 
-while read p; do grep p /Users/cmdb/qbb2022-answers/week14-homework/metagenomics_data/step0_givendata/KRAKEN/assembly.kraken; done <nodesbin4.txt | cut -f2 | sort | uniq -c | sort -n > bin4species.txt
+while read p; do grep ${p:1} /Users/cmdb/qbb2022-answers/week14-homework/metagenomics_data/step0_givendata/KRAKEN/assembly.kraken; done <nodesbin4.txt | cut -f2 | sort | uniq -c | sort -n > bin4species.txt
 
-while read p; do grep p /Users/cmdb/qbb2022-answers/week14-homework/metagenomics_data/step0_givendata/KRAKEN/assembly.kraken; done <nodesbin5.txt | cut -f2 | sort | uniq -c | sort -n > bin5species.txt
+while read p; do grep ${p:1} /Users/cmdb/qbb2022-answers/week14-homework/metagenomics_data/step0_givendata/KRAKEN/assembly.kraken; done <nodesbin5.txt | cut -f2 | sort | uniq -c | sort -n > bin5species.txt
 
-while read p; do grep p /Users/cmdb/qbb2022-answers/week14-homework/metagenomics_data/step0_givendata/KRAKEN/assembly.kraken; done <nodesbin6.txt | cut -f2 | sort | uniq -c | sort -n > bin6species.txt
+while read p; do grep ${p:1} /Users/cmdb/qbb2022-answers/week14-homework/metagenomics_data/step0_givendata/KRAKEN/assembly.kraken; done <nodesbin6.txt | cut -f2 | sort | uniq -c | sort -n > bin6species.txt
 
-4B. species with the most nodes bin 1: Finegoldia magna (28875 nodes, ATCC 29328)
-species with the most nodes bin 2: Finegoldia magna (40950 nodes, ATCC 29328)
-species with the most nodes bin 3: Finegoldia magna (4200 nodes, ATCC 29328)
-species with the most nodes bin 4: Finegoldia magna (19425 nodes, ATCC 29328)
-species with the most nodes bin 5: Finegoldia magna (6825 nodes, ATCC 29328)
-species with the most nodes bin 6: Finegoldia magna (3150 nodes, ATCC 29328)
-all bins appear to have the most nodes from the same species. the species with the second highest number of nodes in all of the bins is interestingly p. acnes, the bacteria that causes acne. 
+4B. species with the most nodes bin 1: Staphylococcus aureus subsp. aureus CN1
+species with the most nodes bin 2: Staphylococcus epidermidis RP62A
+species with the most nodes bin 3: Anaerococcus prevotii DSM 20548
+species with the most nodes bin 4: Staphylococcus haemolyticus JCSC1435
+species with the most nodes bin 5: Cutibacterium avidum 44067
+species with the most nodes bin 6: Enterococcus faecalis V583
 
 4C. perhaps a better way would be to use a local alignment tool, like blast. 
 
